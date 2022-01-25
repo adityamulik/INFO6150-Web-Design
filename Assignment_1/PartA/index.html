@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Internal css  block -->
+  <style>
+
+    .container {
+      padding: 20px;
+    }
+
+    header {
+      font-weight: bold;
+      font-size: 30px;
+      padding-bottom: 20px;
+    }
+
+    .home {
+      font-weight: bold;
+      color: black;
+    }
+
+    .image_container {
+      display: flex;
+    }
+
+    .city_card {
+      margin-left:auto;
+      margin-right:auto;
+      height:auto; 
+      width:auto;
+    }
+
+    .city {
+      padding: 10px;
+      width: 215px;
+      height: 215px;
+      text-align: center;
+    }
+
+    .city_label {
+      padding: 100px;
+    }
+
+    .table-container {
+      margin: auto;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+
+    footer {
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+    }
+
+  </style>
+  <!-- Exit block -->
   <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sky Scanner</title>
+  <title>Skyscanner Clone</title>
 </head>
-<body>
-  
+<body>  
+  <div class="container">
+    <header>Skyscanner Clone</header>
+    <nav>
+      <a class="home" href="#">Home</a>
+      <a href="flights.html">Search Flight</a>
+    </nav>
+    <h3>Let the journey begin ....</h3>
+    <div class="image_container">
+      <div class="city_card">
+        <img name="mumbai" class="city" src="static/images/mumbai.jpeg" alt="Mumbai"/>
+        <br />
+        <label class="city_label" for="mumbai">Mumbai</label>
+      </div>
+      <div class="city_card">
+        <img name="london" class="city" src="static/images/london.jpeg" alt="London"/>
+        <br />
+        <label class="city_label" for="london">London</label>
+      </div>
+      <div class="city_card">
+        <img name="las vegas" class="city" src="static/images/las_vegas.jpeg" alt="Las Vegas"/>
+        <br />
+        <label class="city_label" for="las vegas">Las Vegas</label>
+      </div>
+    </div>
+    <div class="table-container">
+      <p>Sale Flight Pricing from Boston...</p>
+      <table>
+        <tr>
+          <th>From City</th>
+          <th>To City</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>Boston</td>
+          <td>Mumbai</td>
+          <td>$1600</td>
+        </tr>      
+        <tr>
+          <td>Boston</td>
+          <td>London</td>
+          <td>$800</td>
+        </tr>
+        <tr>
+          <td>Boston</td>
+          <td>Las Vegas</td>
+          <td>$200</td>
+        </tr>
+      </table>
+    </div>
+    <footer>
+      &copy; <em id="date"></em>Skyscanner 2022
+    </footer>
+  </div>
 </body>
 </html>

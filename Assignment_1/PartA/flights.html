@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Internal css block  -->
+  <style>
+
+    .container {
+      padding: 20px;
+    }
+
+    header {
+      font-weight: bold;
+      font-size: 30px;
+      padding-bottom: 20px;
+    }
+
+    .search {
+      font-weight: bold;
+      color: black;
+    }
+
+    input {
+      width: 40%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+
+    select {
+      width: 40%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }    
+
+    button {
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+    }
+
+  </style>
+  <!-- Exit block  -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skyscanner Clone</title>
+</head>
+<body>  
+  <div class="container">
+    <header>Skyscanner Clone</header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="search" href="#">Search Flight</a>
+    </nav>
+    <h3>Book your flight seamlessly</h3>
+    <br />
+    <form>
+      <div>
+        <label for="from">From:</label> <br/>
+        <select name="from">
+          <option>Select City</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="boston">Boston</option>
+          <option value="las vegas">Las Vegas</option>
+          <option value="london">London</option>
+        </select>
+      </div>
+      <div>
+        <label for="to">To:</label> <br/>
+        <select name="to">
+          <option>Select City</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="boston">Boston</option>
+          <option value="las vegas">Las Vegas</option>
+          <option value="london">London</option>
+        </select>
+      </div>
+      <label for="depart">Depart Date</label> <br/>
+      <input type="date" id="depart"> <br/>
+      <label for="return">Return Date</label> <br/>
+      <input type="date" id="return">
+      <div>
+        <label for="travellers">Cabin Class & Travellers</label> <br/>
+        <select name="travellers">
+          <option value="mumbai">1 Adult, Economy</option>
+          <option value="boston">2 Adult, Economy</option>
+          <option value="las vegas">1 Adult, Business</option>
+          <option value="london">2 Adult, Business</option>
+        </select> <br/>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+    <footer>
+      &copy; <em id="date"></em>Skyscanner 2022
+    </footer>
+  </div>
+</body>
+</html>
