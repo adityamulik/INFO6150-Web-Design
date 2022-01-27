@@ -9,7 +9,7 @@
   <title>Skyscanner Clone</title>
 </head>
 <body>
-  <div class="container">
+  
     <!-- Header Block  -->
       <header>
         <h1>Skyscanner Clone</h1>
@@ -22,54 +22,98 @@
       </header>
     <!-- End Block  -->
 
-    <!-- Section 1 Block -->
-    <section class="booking_section">
-      <p>Let the journey begin</p>
-      <form>
-        <p>From:</p>
-        <p>To:</p>
-        <p>Depart Date:</p>
-        <p>Return Date:</p>
-      </form>
-      <button>Check</button>
-    </section>
-    <!-- End Block -->
+    <div class="container">
+      <!-- Section 1 Block -->
+      <section class="booking_section">
+        <p>Let the journey begin</p>
+        <form>
+          <div>
+            <span class="details">From:</span>
+            <select name="from">
+              <option>Select City</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="boston">Boston</option>
+              <option value="las vegas">Las Vegas</option>
+              <option value="london">London</option>
+            </select>
+          </div>
+          <div>
+            <span class="details">To:</span>
+            <select name="to">
+              <option>Select City</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="boston">Boston</option>
+              <option value="las vegas">Las Vegas</option>
+              <option value="london">London</option>
+            </select>
+          </div>
+          <span class="details">Depart Date</span>
+          <input type="date" id="depart"> <br/>
+          <span class="details">Return Date</span>
+          <input type="date" id="return">
+          <div>
+            <span class="details">Cabin Class & Travellers</span>
+            <select name="travellers">
+              <option value="mumbai">1 Adult, Economy</option>
+              <option value="boston">2 Adult, Economy</option>
+              <option value="las vegas">1 Adult, Business</option>
+              <option value="london">2 Adult, Business</option>
+            </select>
+          </div>
+          <button type="submit">Search</button>
+        </form>   
+      </section>
+      <!-- End Block -->
 
-    <!-- Section 2 Block -->
-    <section class="hotels_section">
-      
-    </section>
-    <!-- End Block -->
+      <div class="wrapper">
+        <div class="divider div-transparent">        
+        </div>
+      </div>
 
-    <!-- Section 3 Block -->
-    <section class="videos_section">
-      <p>Plan your perfect trip</p>
-      <p>View some of the amazing destinations</p>
-      <video width="320" height="240" controls>
-        <source src="static/videos/singapore.mp4" type="video/mp4">
-        <!-- <source src="movie.ogg" type="video/ogg"> -->
-      <!-- Your browser does not support the video tag. -->
-      </video>
-      <video width="320" height="240" controls>
-        <source src="static/videos/new_york.mp4" type="video/mp4">
-        <!-- <source src="movie.ogg" type="video/ogg"> -->
-      <!-- Your browser does not support the video tag. -->
-      </video>
-    </section>
-    <!-- End Block -->
+      <!-- Section 2 Block -->
+      <section class="hotels_section">
+        
+      </section>
+      <!-- End Block -->
 
-    <!-- Section 4 Block -->
-    <section class="explore_block">
-      
-    </section>
-    <!-- End Block -->
+      <div class="wrapper">
+        <div class="divider div-transparent">        
+        </div>
+      </div>
 
+      <!-- Section 3 Block -->
+      <section class="videos_section">
+        <p>Plan your perfect trip</p>
+        <p>View some of the amazing destinations</p>
+        <video width="320" height="240" controls>
+          <source src="static/videos/singapore.mp4" type="video/mp4">
+          <!-- <source src="movie.ogg" type="video/ogg"> -->
+        <!-- Your browser does not support the video tag. -->
+        </video>
+        <video width="320" height="240" controls>
+          <source src="static/videos/new_york.mp4" type="video/mp4">
+          <!-- <source src="movie.ogg" type="video/ogg"> -->
+        <!-- Your browser does not support the video tag. -->
+        </video>
+      </section>
+      <!-- End Block -->
+
+      <div class="wrapper">
+        <div class="divider div-transparent">        
+        </div>
+      </div>
+
+      <!-- Section 4 Block -->
+      <section class="explore_block">
+        
+      </section>
+      <!-- End Block -->
+    </div>
     <!-- Footer Block  -->
     <footer>
       <p>Plan your travel with Skyscanner Clone. Compare cheap flights, hotels and car rental now.</p>
       <p>Skyscanner Clone © 2022</p>
     </footer>
     <!-- End Block  -->
-  </div>
 </body>
 </html>

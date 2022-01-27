@@ -1,11 +1,11 @@
 /* External Styling */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
+/* General & Nav Bar block  */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* background-color: #24252A; */
 }
 
 li, a, button, p {
@@ -21,6 +21,7 @@ section {
 }
 
 header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,6 +54,53 @@ h1 {
   color: #0088a9;
 }
 
+.wrapper
+{
+	padding-bottom: 90px;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 90px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: white;
+	border-bottom: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+/* End block */
+
+.container {
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form {
+  justify-content: center;
+}
 button {
   padding: 9px 25px;
   background-color: rgba(0,136,169,1);
@@ -68,22 +116,27 @@ button:hover {
 
 .booking_section {
   /* background-image: url('static/images/sunset_background.jpeg'); */
+  margin: auto;
+  width: 50%;
 }
 
 .hotels_section {
-  background-color: hotpink;
 }
 
 .videos_section {
-  background-color: indigo;
 }
 
 .explore_block {
-  background-color: black;
 }
 
+/* About Section Page CSS  */
+.about_section {
+  height: 100%;
+  padding: 15px 200px 180px;
+}
+/* End Block  */
+
 footer {
-  position: relative;
   width: 100%;
   bottom: 0;
   background-color: #24252A;
