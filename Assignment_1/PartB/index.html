@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
-  <title>Skyscanner Clone</title>
+  <title>Skyscanner Clone - Part B</title>
 </head>
 <body>
   
@@ -77,22 +77,30 @@
       </div>
 
       <!-- Section 2 Block -->
-      <section class="hotels_section">
+      <section class="images_section">
+        <h2>Mesmerizing Views</h2>   
+        <h3>Most visited destinations</h3>
         <div class="image_container">
-          <div class="city_card">
-            <img name="mumbai" class="city" src="static/images/mumbai.jpeg" alt="Mumbai"/>
-            <br />
-            <label class="city_label" for="mumbai">Mumbai</label>
+          <div class="card">
+            <div class="card-image1"></div>
+            <div class="card-text">
+              <span class="date">Mumbai City</span>
+              <p class="city_info">Nicknamed "City of Dreams", Mumbai is a treat for any visiting traveler or agent on a mission.</p>
+            </div>
           </div>
-          <div class="city_card">
-            <img name="london" class="city" src="static/images/london.jpeg" alt="London"/>
-            <br />
-            <label class="city_label" for="london">London</label>
+          <div class="card">
+            <div class="card-image2"></div>
+            <div class="card-text">
+              <span class="date">London City</span>
+              <p class="city_info">London is the capital and largest city of England and the United Kingdom. It stands on the River Thames in south-east England.</p>
+            </div>
           </div>
-          <div class="city_card">
-            <img name="las vegas" class="city" src="static/images/las_vegas.jpeg" alt="Las Vegas"/>
-            <br />
-            <label class="city_label" for="las vegas">Las Vegas</label>
+          <div class="card">
+            <div class="card-image3"></div>
+            <div class="card-text">
+              <span class="date">Las Vegas</span>
+              <p class="city_info">Las Vegas, often known simply as Vegas, is the 26th-most populous city in the United States, the most populous city in the state of Nevada, and the county seat of Clark County.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -105,19 +113,21 @@
 
       <!-- Section 3 Block -->
       <section class="videos_section">
-        <div class="video_container">
-          <h2>Plan your perfect trip</h2>
-          <p>View some of the amazing destinations</p>
-          <video width="320" height="240" controls>
-            <source src="static/videos/singapore.mp4" type="video/mp4">
-            <!-- <source src="movie.ogg" type="video/ogg"> -->
-          <!-- Your browser does not support the video tag. -->
-          </video>
-          <video width="320" height="240" controls>
-            <source src="static/videos/new_york.mp4" type="video/mp4">
-            <!-- <source src="movie.ogg" type="video/ogg"> -->
-          <!-- Your browser does not support the video tag. -->
-          </video>
+        <h2>Plan your perfect trip</h2>
+        <h3>View some of the amazing destinations</h3>
+        <div class="video_container">          
+          <div class="video">
+            <video controls>
+              <source src="static/videos/singapore.mp4" type="video/mp4">            
+            </video>
+            <p>Singapore City</p>
+          </div>
+          <div class="video">
+            <video controls>
+              <source src="static/videos/new_york.mp4" type="video/mp4">
+            </video>
+            <p>New York City</p>
+          </div>
         </div>
       </section>
       <!-- End Block -->

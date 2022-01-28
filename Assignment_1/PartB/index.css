@@ -9,7 +9,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-li, a, button, p {
+li, a, button {
   font-weight: 500;
   font-size: 17px;
   color: #edf0f1;
@@ -17,7 +17,7 @@ li, a, button, p {
 }
 
 section {
-  padding: 15px 10% 180px;
+  padding: 15px 10%;
 }
 
 header {
@@ -138,16 +138,97 @@ button:hover {
 }
 
 .booking_section {
-  /* background-image: url('static/images/sunset_background.jpeg'); */
   margin: auto;
+}
+
+.booking_container {
   width: 50%;
 }
 
-.hotels_section {
+/* Images section Block  */
+
+.image_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
 }
 
-.videos_section {
+.card {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 210px 210px;
+  grid-template-areas: "image" "text";
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0 0 0 0.9);
+  text-align: center;  
+  margin: 20px;
+
+  transition: 0.5s ease;
+  cursor: pointer;
 }
+
+.card:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0 0 0 0.6);
+  border-radius: 18px;
+}
+
+.card-image1 {
+  grid-area: image;
+  background: url("static/images/mumbai.jpeg");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+
+.card-image2 {
+  grid-area: image;
+  background: url("static/images/london.jpeg");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+
+.card-image3 {
+  grid-area: image;
+  background: url("static/images/las_vegas.jpeg");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+
+.card-text {
+  grid-area: text;
+  margin: 25px;
+}
+
+/* End Block  */
+
+/* Videos Section Block  */
+
+.video_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 60vh;
+}
+
+video {
+  margin: 20px;
+  height: 300px;
+  width: 450px;
+}
+
+.video {
+  display: inline;
+}
+
+/* End Block  */
 
 .explore_block {
 }
@@ -172,6 +253,13 @@ footer {
 .about_section {
   padding: 100px 380px;
   max-height: 100%;
+}
+
+.about_skyscanner {
+  font-weight: 500;
+  font-size: 17px;
+  color: #edf0f1;
+  text-decoration: none;
 }
 
 .footer {
