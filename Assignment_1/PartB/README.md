@@ -1,11 +1,11 @@
 
-Assignment 1 - Part B
+# Assignment 1 - Part B
 
 - Author: Aditya Mulik
 - NUID: 002127694
 - Email: mulik.a@northeastern.edu
 
-Topic: A static website created for a travel company called Skyscanner which is built using basic HTML & CSS with some advanced controls.
+## Topic: A static website created for a travel company called Skyscanner which is built using basic HTML & CSS with some advanced controls.
 
 Features:
 
