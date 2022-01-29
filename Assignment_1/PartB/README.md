@@ -16,6 +16,7 @@ Features:
 5. Header, Footer is common across both pages.
 6. Favicon is used to display the logo of the company.
 7. Gradiant coloring is used for rich UI experience.
+8. Card animations, hover animations are also added using CSS.
 
 Setup:
 - Open the index.html file on vscode
