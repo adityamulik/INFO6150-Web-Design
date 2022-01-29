@@ -20,9 +20,10 @@ Features:
   - table - a common table to display flight pricing from a particular city
   - footer - with copyright symbol 
   - form - form with input elements & select elements to book a flight.
-    - button
+    - button - submit the form
     - input 
     - select
+  - hyperlink - used in nav bar to switch between two pages
 
 Setup:
 - Open the index.html file on vscode
