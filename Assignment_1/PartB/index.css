@@ -9,7 +9,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-li, a, button {
+li, a {
   font-weight: 500;
   font-size: 17px;
   color: #edf0f1;
@@ -152,7 +152,7 @@ button:hover {
   max-width: 750px;
   margin-top: 50px;
   margin-bottom: 50px;
-  padding: 25px 30px;
+  padding: 35px 40px;
   border-radius: 5px;
 }
 
@@ -162,19 +162,31 @@ button:hover {
 }
 
 .travel-details {
+  max-width: 100%;
   width: calc(100% / 2-20px);
   margin: 10px;
   justify-content: space-between;
 }
 
-.search-flight {
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+.button-container {
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.search-flight {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  padding: 15px;
+}
+
+.search-flight:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
 input, select {
   height: 45px;
+  width: 100%;
 }
 
 /* End Block  */
@@ -278,14 +290,22 @@ footer {
 
 /* About Section Page CSS  */
 
+audio {
+  margin: 10px;
+}
+
 .about_container {
   position: fixed;
   height: 100%;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
+.about_audio_container {
+  display: flex;
+}
+
 .about_section {
-  padding: 100px 380px;
+  padding: 100px 320px;
   max-height: 100%;
 }
 
