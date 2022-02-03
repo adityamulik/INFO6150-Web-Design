@@ -1,43 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aditya Mulik Portfolio</title>
-  <link rel="stylesheet" href="index.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/index.css">
+
+  <title>Aditya Mulik | Web Developer</title>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="max-width">
-      <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
-      <ul class="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Teams</a></li>
-        <li><a href="#">Contact</a></li>
+<div class="row">
+
+  <!-- left section  -->
+  <div class="column-1">
+    <nav>
+      <h1>ADITYA MULIK</h1>
+      <ul class="navigation">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- home section block  -->
-  <section class="home" id="home">
-    <div class="max-width">
-      <div class="home-content">
-        <div class="text-1">Hello, my name is</div>
-        <div class="text-2">Aditya Mulik</div>
-        <div class="text-3">And I'm a <span>Software Developer</span></div>
+    <!-- Footer section -->
+    <footer>
+      <h5>Copyright</h5>
+    </footer>
+  </div>
+
+  <!-- right section  -->
+  <div class="column-2">
+    <section class="about-me">
+
+    </section>
+
+    <!-- Skills section -->
+    <section class="skills" id="skills">
+      <h2 class="skill-header">My Top Skills</h2>
+
+      <div class="skills-wrapper">
+        <div class="first-set animate__animated animate__pulse">
+          <img
+            src="assets/icons/icons8-html-5.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-css3.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-javascript.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+        </div>
+
+        <div class="second-set animate__animated animate__pulse">
+          <img
+            src="assets/icons/icons8-bootstrap.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-react-native.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-git.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+        </div>
       </div>
-    </div>
-  </section>
-  <!-- end block  -->
+    </section>
 
-  <p>I’m a seasoned Software Developer with a dedicated approach to work and aspire to attain larger goals.
-    My key interest lies in problem solving and build products which aims to solve real world problems with help of several programming languages and cloud solutions. I am passionate about Software Development, I posses good leadership and public speaking skills. I am always open to new pursuits and ready to explore new avenues of work & interest. I aim to be competent and apply my expertise towards contributing to a much better and technologically advanced tomorrow.</p>
-  
-  
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+      <h2>Get In Touch With Me</h2>
+      <div class="contact-form-container">
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xyylnggw" method="POST">
+            <div class="form-control">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="sender-name"
+                placeholder="Enter Your Name"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="sender-email"
+                placeholder="Enter Your Email"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                cols="60"
+                rows="10"
+                placeholder="Enter Your Message"
+                name="message"
+                class="input-field"
+                required
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              value="Submit"
+              id="submit-btn"
+              class="submit-btn"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+ 
 </body>
 </html>
