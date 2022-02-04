@@ -1,209 +1,282 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/index.css">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Aditya Mulik - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
 
-  <title>Aditya Mulik | Web Developer</title>
-</head>
-<body>
-<div class="row">
-
-  <!-- left section  -->
-  <div class="column-1">
-    <nav>
-      <h1>ADITYA MULIK</h1>
-      <ul class="navigation">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- Footer section -->
-    <footer>
-      <h5>Copyright</h5>
-    </footer>
-  </div>
-
-  <!-- right section  -->
-  <div class="column-2">
-
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-      <img
-        src="assets/images/wfh_1.svg"
-        alt="jane-doe"
-        loading="lazy"
-        class="hero-img"
-      />
-      <div class="bio animate__animated animate__shakeX">
-        <h2 class="bio-title">About Me</h2>
-        <p class="bio-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sed
-          dolorem fugit sapiente porro veniam pariatur dolore nostrum delectus
-          inventore tempore minus nemo, iste ullam illo laboriosam maiores
-          repudiandae quos!
-        </p>
-      </div>
-    </section>
-
-    <!-- Skills section -->
-    <section class="skills" id="skills">
-      <h2 class="skill-header">My Top Skills</h2>
-
-      <div class="skills-wrapper">
-        <div class="first-set animate__animated animate__pulse">
-          <img
-            src="assets/icons/icons8-html-5.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-          <img
-            src="assets/icons/icons8-css3.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-          <img
-            src="assets/icons/icons8-javascript.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-        </div>
-
-        <div class="second-set animate__animated animate__pulse">
-          <img
-            src="assets/icons/icons8-bootstrap.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-          <img
-            src="assets/icons/icons8-react-native.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-          <img
-            src="assets/icons/icons8-git.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects section -->
-    <section class="projects" id="projects">
-      <h2 class="projects-title">Some of my Recent Projects</h2>
-      <div class="projects-container">
-        <div class="project-container project-card">
-          <img
-            src="assets/images/expenseTracker.png"
-            alt="expense-tracker"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Expense Tracker</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
-        </div>
-        <div class="project-container project-card">
-          <img
-            src="assets/images/netflixClone.png"
-            alt="netflic-clone"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Netflix Clone</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
-        </div>
-        <div class="project-container project-card">
-          <img
-            src="assets/images/greenyEarth.png"
-            alt="greeny-earth"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Greeny Earth</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact section -->
-    <section class="contact" id="contact">
-      <h2>Get In Touch With Me</h2>
-      <div class="contact-form-container">
-        <div class="contact-form">
-          <form action="https://formspree.io/f/xyylnggw" method="POST">
-            <div class="form-control">
-              <label for="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="sender-name"
-                placeholder="Enter Your Name"
-                class="input-field"
-                required
-              />
+  <body>
+    <div id="page-wraper">
+      <!-- Sidebar Menu -->
+      <div class="responsive-nav">
+        <i class="fa fa-bars" id="menu-toggle"></i>
+        <div id="menu" class="menu">
+          <i class="fa fa-times" id="menu-close"></i>
+          <div class="container">
+            <div class="image">
+              <a href="#"><img src="assets/images/author-image.jpg" alt="" /></a>
             </div>
-            <div class="form-control">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="sender-email"
-                placeholder="Enter Your Email"
-                class="input-field"
-                required
-              />
+            <div class="author-content">
+              <h4>ADITYA MULIK</h4>
+              <span>Software Developer</span>
             </div>
-            <div class="form-control">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                cols="60"
-                rows="10"
-                placeholder="Enter Your Message"
-                name="message"
-                class="input-field"
-                required
-              ></textarea>
-            </div>
-            <input
-              type="submit"
-              value="Submit"
-              id="submit-btn"
-              class="submit-btn"
-            />
-          </form>
+            <nav class="main-nav" role="navigation">
+              <ul class="main-menu">
+                <li><a href="#section1">About Me</a></li>
+                <li><a href="#section2">What I’m good at</a></li>
+                <li><a href="#section3">My Work</a></li>
+                <li><a href="#section4">Contact Me</a></li>
+              </ul>              
+            </nav>
+            <div class="copyright-text">
+              <p>&copy; Copyright 2022 - Aditya Mulik</p>
+            </div>           
+          </div>
         </div>
       </div>
-    </section>
-  </div>
-</div>
- 
-</body>
+
+      <section id="section1" class="section about-me" data-section="section1">
+        <div class="container">
+          <div class="section-heading">
+            <div class="image-mobile">
+              <a href="#"><img src="assets/images/author-image.jpg" alt="" /></a>
+            </div>
+            <h2>About Me</h2>
+            <div class="line-dec"></div>
+            <span>
+              I’m a seasoned Software Developer with a dedicated approach to work and aspire to attain larger goals. 
+              My key interest lies in problem solving and build products which aims to solve real world problems with help of several programming languages and cloud solutions. 
+              I am passionate about Software Development, I posses good leadership and public speaking skills. 
+            </span>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Sed sagittis rhoncus velit</h4>
+                  <p>
+                    Pellentesque habitant morbi tristique senectus et netus et
+                    malesuada fames ac turpis egestas. Vestibulum fermentum
+                    eleifend nibh, vitae sodales elit finibus pretium.
+                    Suspendisse potenti. Ut sollicitudin risus a sollicitudin
+                    semper.
+                  </p>
+                  <div class="white-button">
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="assets/images/right-image.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section2" class="section my-services" data-section="section2">
+        <div class="container">
+          <div class="section-heading">
+            <h2>What I’m good at?</h2>
+            <div class="line-dec"></div>
+            <span
+              >Curabitur leo felis, rutrum vitae varius eu, malesuada a tortor.
+              Vestibulum congue leo et tellus aliquam, eu viverra nulla semper.
+              Nullam eu faucibus diam. Donec eget massa ante.</span
+            >
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="first-service-icon service-icon"></div>
+                <h4>HTML5 &amp; CSS3</h4>
+                <p>
+                  Phasellus non convallis dolor. Integer tempor hendrerit arcu
+                  at bibendum. Sed ac ante non metus vehicula congue quis eget
+                  eros.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="second-service-icon service-icon"></div>
+                <h4>Creative Ideas</h4>
+                <p>
+                  Proin lacus massa, eleifend sed fermentum in, dignissim vel
+                  metus. Nunc accumsan leo nec felis porttitor, ultricies
+                  faucibus purus mollis.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="third-service-icon service-icon"></div>
+                <h4>Easy Customize</h4>
+                <p>
+                  Integer suscipit condimentum aliquet. Nam quis risus metus.
+                  Nullam faucibus quam eget arcu pretium tincidunt. Nam libero
+                  dui.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="fourth-service-icon service-icon"></div>
+                <h4>Admin Dashboard</h4>
+                <p>
+                  Vivamus et dui a massa venenatis fringilla. Proin lacus massa,
+                  eleifend sed fermentum in, dignissim vel metus. Nunc accumsan
+                  leo nec felis porttitor.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section3" class="section my-work" data-section="section3">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Certifications Gallery</h2>
+            <div class="line-dec"></div>
+            <span>
+              Below are some of the certifications I have achieved.
+            </span>
+          </div>
+          <div class="row">
+            <div class="isotope-wrapper">
+              <div class="isotope-box">
+                <div class="isotope-item" data-type="nature">
+                  <figure class="snip1321">
+                    <img
+                      src="assets/images/aws_cert.png"
+                      alt="sq-sample26"
+                    />
+                    <figcaption>
+                      <a
+                        href="assets/images/aws_cert.png"
+                        data-lightbox="image-1"
+                        data-title="Caption"
+                        ><i class="fa fa-search"></i
+                      ></a>
+                      <h4>AWS Solutions Architect - Associate</h4>
+                      <span></span>
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="isotope-item" data-type="people">
+                  <figure class="snip1321">
+                    <img
+                      src="assets/images/python_cert.png"
+                      alt="sq-sample26"
+                    />
+                    <figcaption>
+                      <a
+                        href="assets/images/python_cert.png "
+                        data-lightbox="image-1"
+                        data-title="Caption"
+                        ><i class="fa fa-search"></i
+                      ></a>
+                      <h4>Hackerrank - Python Basic</h4>
+                      <span><a href="https://www.hackerrank.com/certificates/a01325f55ef0"></a></span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section4" class="section contact-me" data-section="section4">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Contact Me</h2>
+            <div class="line-dec"></div>
+            <span
+              >Fusce eget nibh nec justo interdum condimentum. Morbi justo ex,
+              efficitur at ante ac, tincidunt maximus ligula. Lorem ipsum dolor
+              sit amet, consectetur adipiscing elit.</span
+            >
+          </div>
+          <div class="row">
+            <div class="right-content">
+              <div class="container">
+                <form id="contact" action="" method="post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input
+                          name="name"
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          placeholder="Your name..."
+                          required=""
+                        />
+                      </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input
+                          name="email"
+                          type="text"
+                          class="form-control"
+                          id="email"
+                          placeholder="Your email..."
+                          required=""
+                        />
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input
+                          name="subject"
+                          type="text"
+                          class="form-control"
+                          id="subject"
+                          placeholder="Subject..."
+                          required=""
+                        />
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <textarea
+                          name="message"
+                          rows="6"
+                          class="form-control"
+                          id="message"
+                          placeholder="Your message..."
+                          required=""
+                        ></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="button">
+                          Send Message
+                        </button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </body>
 </html>
