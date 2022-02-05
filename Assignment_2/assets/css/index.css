@@ -673,6 +673,10 @@ section.contact-me {
     text-align: center;
 }
 
+.send-email {
+    color: #a43f49;
+}
+
 @media screen and (max-width: 1680px) {
     .menu {
         left: 5%;
