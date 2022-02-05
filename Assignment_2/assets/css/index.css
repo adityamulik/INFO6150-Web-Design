@@ -16,6 +16,7 @@ body {
     background-size: cover;
     width: 100%;
     float: left;
+    overflow: auto;
 }
 
 
