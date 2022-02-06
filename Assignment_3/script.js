@@ -21,19 +21,10 @@ var t = new Title("CONNECT WITH ME!");
 // Get table
 const table = document.getElementById("myTable");
 
-// Get Reference Checkboxes in table
+
+// Function to get selected row and neighbouring elements
 
 const checkBoxes = table.getElementsByTagName("input");
-
-// Loop over checkBoxes
-
-for (let i=0; i<checkBoxes.length; i++) {
-    if (checkBoxes[i].checked) {
-
-    }
-}
-
-// Function to get selected row
 
 function selectRow() {
   for (let i=0; i<checkBoxes.length; i++) {
@@ -52,6 +43,53 @@ function selectRow() {
 
 selectRow();
 
-// window.addEventListener("click", () => {
-//   console.log("Clicked");
-// })
+
+// Function to get selected row and img click
+
+const dropDownImg = table.getElementsByTagName("img");
+
+function selectDropDownImage() {  
+  for (let i=0; i<dropDownImg.length; i++) {      
+      const row = dropDownImg[i].parentNode.parentNode;
+      const descRow = row.nextSibling.nextSibling;
+      let boolean = true; 
+      dropDownImg[i].addEventListener("click", () => {
+        // console.log("Clicked");
+        // console.log(descRow);        
+
+        if (boolean) {
+          descRow.style.display = "block";
+          boolean = false;
+          console.log("Checked");
+        } else {          
+          descRow.style.display = "none";
+          console.log("UnChecked");
+          boolean = true;
+        }
+        
+      })
+  }
+}
+
+selectDropDownImage();
+
+// Add new student to the table
+
+const addNewStudent = document.getElementById("add");
+
+addNewStudent.addEventListener("click", () => {
+
+  const rows = table.getElementsByTagName("tr");
+
+  const rowCount = Math.floor(rows.length / 2);
+
+  let newRow = table.insertRow(rowCount + 1);
+
+  const cell1 = newRow.insertCell(0);
+  const cell2 = newRow.insertCell(0);
+  const cell3 = newRow.insertCell(0);
+
+  cell1.innerHTML = "Test";
+  cell2.innerHTML = "Test";
+  cell3.innerHTML = "Test";
+});
