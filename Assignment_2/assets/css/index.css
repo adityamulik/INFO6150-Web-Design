@@ -747,7 +747,7 @@ section.contact-me {
 
 /* Mobile screen 365px media responsive block  */
 
-@media screen and (max-width: 365px) {    
+@media screen and (min-width: 365px) {    
 
     .section-heading {
         text-align: center;
