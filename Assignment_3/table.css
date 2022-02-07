@@ -17,9 +17,9 @@
 }
 #button {
 	color:#fff;
-	background-color: orange;
+	background-color: gray;
 	border-radius: 3px;
-	border:2px solid orange;
+	/* border:2px solid orange; */
 	margin-left: 180px;
 }
 
