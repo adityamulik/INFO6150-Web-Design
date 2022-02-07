@@ -37,8 +37,8 @@ function selectRow() {
           row.style.backgroundColor = "yellow";
           // console.log(row.lastElementChild);
           // console.log(row);
-          row.lastElementChild.innerHTML = "<td><button>Edit</button></td>";
-          row.lastElementChild.previousElementSibling.innerHTML = "<td><button onClick='deleteRow(this);'>Delete</button></td>";
+          row.lastElementChild.innerHTML = "<td><button onClick='editRow(this)'>Edit</button></td>";
+          row.lastElementChild.previousElementSibling.innerHTML = "<td><button onClick='deleteRow(this)'>Delete</button></td>";
         } else {
           checkboxCount--;
           // console.log("Not Checked");
@@ -54,83 +54,113 @@ selectRow();
 
 
 // Function to get selected row and img click
-const dropDownImg = table.getElementsByTagName("img");
 
-for (let i=0; i<dropDownImg.length; i++) {      
-    const row = dropDownImg[i].parentNode.parentNode;
-    const descRow = row.nextSibling.nextSibling;
-    let boolean = true; 
-    dropDownImg[i].addEventListener("click", () => {
-      // console.log("Clicked");
-      // console.log(descRow);        
+let booleanMain = true; 
 
-      if (boolean) {
-        descRow.style.display = "block";
-        boolean = false;
-        // console.log("Checked");
-      } else {          
-        descRow.style.display = "none";
-        // console.log("UnChecked");
-        boolean = true;
-      }
-      
-    })
+function toggleImg1(r) {
+    const i = r.parentNode.parentNode.rowIndex;
+    const row = r.parentNode.parentNode;
+    // console.log(row);
+    const descRow = row.nextSibling; 
+    // console.log(descRow);
+    // console.log(row); 
+    if (booleanMain) {
+      descRow.style.display = "table-cell";
+      booleanMain = false;
+      // console.log("Checked");
+    } else {          
+      descRow.style.display = "none";
+      // console.log("UnChecked");
+      booleanMain = true;
+    }
+}
+
+// toggleImg();
+
+let boolean = true; 
+
+function toggleImg2(r) {  
+  const row = r.parentNode.parentNode;
+  // console.log(row);
+  const descRow = row.nextSibling.nextSibling; 
+  // console.log(descRow);
+  // console.log(row); 
+  if (boolean) {
+    descRow.style.display = "table-cell";
+    boolean = false;
+    // console.log("Checked");
+  } else {          
+    descRow.style.display = "none";
+    // console.log("UnChecked");
+    boolean = true;
+  }
 }
 
 // Function to get selected row and get delete button
 
 function deleteRow(r) {
-  var i = r.parentNode.parentNode.rowIndex;
+  const i = r.parentNode.parentNode.rowIndex;
   document.getElementById("myTable").deleteRow(i);
-
+  alert(`Student deleted successfully!`);
   selectRow();
 }
 
 
 // Function to get selected row and get edit button
 
+function editRow(r) {
+  alert("Edit the details!");
+  selectRow();
+}
+
 // Add new student to the table
 
-const addNewStudent = document.getElementById("add");
+function addNewRow() {
+  const row = table.insertRow(table.rows.length);
 
-addNewStudent.addEventListener("click", () => {
+  const rowCount = table.rows.length;
 
-  const rows = table.getElementsByTagName("tr");
+  console.log(rowCount);
 
-  const rowCount = rows.length;
+  const checkboxNew = row.insertCell(0);
+  const student = row.insertCell(1);
+  const advisor = row.insertCell(2);
+  const awardStatus = row.insertCell(3);
+  const semester = row.insertCell(4);
+  const type = row.insertCell(5);
+  const budget = row.insertCell(6);
+  const percentage = row.insertCell(7);
+  const deleteBtn = row.insertCell(8);
+  const editBtn = row.insertCell(9);
 
-  let newRow = table.insertRow(rowCount);
-  let newRowDesc = table.insertRow(rowCount + 1);
+  checkboxNew.innerHTML = `<td><input type="checkbox" /><br /><br /><img onClick="toggleImg1(this)" src="down.png" width="25px" /></td>`;
 
-  const checkboxNew = newRow.insertCell(0);
-  const student = newRow.insertCell(1);
-  const advisor = newRow.insertCell(2);
-  const awardStatus = newRow.insertCell(3);
-  const semester = newRow.insertCell(4);
-  const type = newRow.insertCell(5);
-  const budget = newRow.insertCell(6);
-  const percentage = newRow.insertCell(7);
-  const deleteBtn = newRow.insertCell(8);
-  const editBtn = newRow.insertCell(9);
-
-
-  checkboxNew.innerHTML = `<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>`;
-
-  student.innerHTML = `Student ${Math.floor(rowCount / 2) + 1}`;
-  advisor.innerHTML = `Teacher ${Math.floor(rowCount / 2) + 1}`;
+  student.innerHTML = `Student ${Math.ceil(rowCount/ 2)}`;
+  advisor.innerHTML = `Teacher ${Math.ceil(rowCount/ 2)}`;
   awardStatus.innerHTML = "Approved";
   semester.innerHTML = "Fall";
   type.innerHTML = "TA";
   budget.innerHTML = Math.ceil(Math.random() * 100000);
   percentage.innerHTML = "100%";
 
-
-  // Add new row to display the details of the row.
-
-  newRowDesc.classList.add("dropDownTextArea")
+  try {
+    setTimeout(() => {alert(`Record Added Successfully - Student ${Math.ceil(rowCount/ 2)}`)}, 100);
+  } catch (error) {
+    alert("Something went wrong!");
+  }
   
-  newRowDesc.innerHTML = 
-      '<td colspan="8"> \
+  selectRow();
+
+  addSubsequentRow();
+}
+
+function addSubsequentRow() {
+  const row = table.insertRow(table.rows.length);
+
+  row.classList.add("dropDownTextArea")
+  
+  row.innerHTML = 
+      '<td colspan="10"> \
         Advisor:<br /><br /> \
         Award Details<br /> \
         Summer 1-2014(TA)<br /> \
@@ -141,9 +171,61 @@ addNewStudent.addEventListener("click", () => {
       </td>';
 
   selectRow();
+}
 
-  setTimeout(() => {alert(`Student ${Math.floor(rowCount / 2) + 1} added successfully!`)}, 100)  
-});
+// const addNewStudent = document.getElementById("add");
+
+// addNewStudent.addEventListener("click", () => {
+
+//   const rows = table.getElementsByTagName("tr");
+
+//   const rowCount = rows.length;
+
+//   let newRow = table.insertRow(rowCount);
+//   let newRowDesc = table.insertRow(rowCount + 1);
+
+//   const checkboxNew = newRow.insertCell(0);
+//   const student = newRow.insertCell(1);
+//   const advisor = newRow.insertCell(2);
+//   const awardStatus = newRow.insertCell(3);
+//   const semester = newRow.insertCell(4);
+//   const type = newRow.insertCell(5);
+//   const budget = newRow.insertCell(6);
+//   const percentage = newRow.insertCell(7);
+//   const deleteBtn = newRow.insertCell(8);
+//   const editBtn = newRow.insertCell(9);
+
+
+//   checkboxNew.innerHTML = `<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>`;
+
+//   student.innerHTML = `Student ${Math.floor(rowCount / 2) + 1}`;
+//   advisor.innerHTML = `Teacher ${Math.floor(rowCount / 2) + 1}`;
+//   awardStatus.innerHTML = "Approved";
+//   semester.innerHTML = "Fall";
+//   type.innerHTML = "TA";
+//   budget.innerHTML = Math.ceil(Math.random() * 100000);
+//   percentage.innerHTML = "100%";
+
+
+//   // Add new row to display the details of the row.
+
+//   newRowDesc.classList.add("dropDownTextArea")
+  
+//   newRowDesc.innerHTML = 
+//       '<td colspan="8"> \
+//         Advisor:<br /><br /> \
+//         Award Details<br /> \
+//         Summer 1-2014(TA)<br /> \
+//         Budget Number: <br /> \
+//         Tuition Number: <br /> \
+//         Comments:<br /><br /><br /> \
+//         Award Status:<br /><br /><br /> \
+//       </td>';
+
+//   selectRow();
+
+//   setTimeout(() => {alert(`Student ${Math.floor(rowCount / 2) + 1} added successfully!`)}, 100)  
+// });
 
 // Get active on click events of window model
 
@@ -154,10 +236,12 @@ window.addEventListener("click", () => {
   if (checkboxCount > 0) {    
     submitBtn.style.backgroundColor = "orange";
     submitBtn.style.border = "2px solid orange";
+    submitBtn.style.cursor = "pointer";
     submitBtn.disabled = false;
   } else {
     submitBtn.style.backgroundColor = "gray";
     submitBtn.style.border = "";
+    submitBtn.style.cursor = "initial";
     submitBtn.disabled = true;
   }
 })

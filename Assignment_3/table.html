@@ -24,7 +24,7 @@
 			<th>EDIT</th>
 		</tr>
 		<tr>
-			<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>
+			<td><input type="checkbox" /><br /><br /><img onClick="toggleImg2(this)" src="down.png" width="25px" /></td>
 			<td>Student 1</td>
 			<td>Teacher 1</td>
 			<td>Approved</td>
@@ -45,7 +45,7 @@
 			Award Status:<br /><br /><br />
 		</td></tr>
 		<tr>
-			<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>
+			<td><input type="checkbox" /><br /><br /><img onClick="toggleImg2(this)" src="down.png" width="25px" /></td>
 			<td>Student 2</td>
 			<td>Teacher 2</td>
 			<td>Approved</td>
@@ -66,7 +66,7 @@
 			Award Status:<br /><br /><br />
 		</td></tr>
 		<tr>
-			<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>
+			<td><input type="checkbox" /><br /><br /><img onClick="toggleImg2(this)" src="down.png" width="25px" /></td>
 			<td>Student 3</td>
 			<td>Teacher 3</td>
 			<td>Approved</td>
@@ -93,7 +93,7 @@
 	<br /><br />
 	
 	<button id="button" disabled>SUBMIT SELECTED AWARDS</button>
-	<button id="add">Add New Student</button>
+	<button id="add" onClick="addNewRow()">Add New Student</button>
 
 	<nav class="socialmediaicons"></nav>
 	<script src="script.js"></script>
