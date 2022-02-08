@@ -65,7 +65,7 @@ function toggleImg1(r) {
     // console.log(descRow);
     // console.log(row); 
     if (booleanMain) {
-      descRow.style.display = "table-cell";
+      descRow.style.display = "table-row";
       booleanMain = false;
       // console.log("Checked");
     } else {          
@@ -86,7 +86,7 @@ function toggleImg2(r) {
   // console.log(descRow);
   // console.log(row); 
   if (boolean) {
-    descRow.style.display = "table-cell";
+    descRow.style.display = "table-row";
     boolean = false;
     // console.log("Checked");
   } else {          
@@ -100,6 +100,7 @@ function toggleImg2(r) {
 
 function deleteRow(r) {
   const i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("myTable").deleteRow(i);
   document.getElementById("myTable").deleteRow(i);
   alert(`Student deleted successfully!`);
   selectRow();
@@ -120,7 +121,7 @@ function addNewRow() {
 
   const rowCount = table.rows.length;
 
-  console.log(rowCount);
+  // console.log(rowCount);
 
   const checkboxNew = row.insertCell(0);
   const student = row.insertCell(1);
@@ -173,59 +174,6 @@ function addSubsequentRow() {
   selectRow();
 }
 
-// const addNewStudent = document.getElementById("add");
-
-// addNewStudent.addEventListener("click", () => {
-
-//   const rows = table.getElementsByTagName("tr");
-
-//   const rowCount = rows.length;
-
-//   let newRow = table.insertRow(rowCount);
-//   let newRowDesc = table.insertRow(rowCount + 1);
-
-//   const checkboxNew = newRow.insertCell(0);
-//   const student = newRow.insertCell(1);
-//   const advisor = newRow.insertCell(2);
-//   const awardStatus = newRow.insertCell(3);
-//   const semester = newRow.insertCell(4);
-//   const type = newRow.insertCell(5);
-//   const budget = newRow.insertCell(6);
-//   const percentage = newRow.insertCell(7);
-//   const deleteBtn = newRow.insertCell(8);
-//   const editBtn = newRow.insertCell(9);
-
-
-//   checkboxNew.innerHTML = `<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>`;
-
-//   student.innerHTML = `Student ${Math.floor(rowCount / 2) + 1}`;
-//   advisor.innerHTML = `Teacher ${Math.floor(rowCount / 2) + 1}`;
-//   awardStatus.innerHTML = "Approved";
-//   semester.innerHTML = "Fall";
-//   type.innerHTML = "TA";
-//   budget.innerHTML = Math.ceil(Math.random() * 100000);
-//   percentage.innerHTML = "100%";
-
-
-//   // Add new row to display the details of the row.
-
-//   newRowDesc.classList.add("dropDownTextArea")
-  
-//   newRowDesc.innerHTML = 
-//       '<td colspan="8"> \
-//         Advisor:<br /><br /> \
-//         Award Details<br /> \
-//         Summer 1-2014(TA)<br /> \
-//         Budget Number: <br /> \
-//         Tuition Number: <br /> \
-//         Comments:<br /><br /><br /> \
-//         Award Status:<br /><br /><br /> \
-//       </td>';
-
-//   selectRow();
-
-//   setTimeout(() => {alert(`Student ${Math.floor(rowCount / 2) + 1} added successfully!`)}, 100)  
-// });
 
 // Get active on click events of window model
 
