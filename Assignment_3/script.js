@@ -1,4 +1,6 @@
-//Title constructor function that creates a Title object
+// @ author tusharkurhekar
+// date - 02 11 22
+
 function Title(t1) 
 { 
   this.mytitle = t1;
@@ -18,111 +20,88 @@ var socialMedia = {
 
 var t = new Title("CONNECT WITH ME!");
 
-// Get table
 const table = document.getElementById("myTable");
 
-// checkbox count
-let checkboxCount = 0;
+let countBoxPresent = 0;
 
-// Function to get selected row and get checkbox
-const checkBoxes = table.getElementsByTagName("input");
+const checkRows = table.getElementsByTagName("input");
+hideOnStart();
 
-function selectRow() {
-  for (let i=0; i<checkBoxes.length; i++) {
-      const row = checkBoxes[i].parentNode.parentNode;
-      checkBoxes[i].addEventListener("click", () => {
-        if (checkBoxes[i].checked) {
-          checkboxCount++;
-          // console.log("Checked");
-          row.style.backgroundColor = "yellow";
-          // console.log(row.lastElementChild);
-          // console.log(row);
-          row.lastElementChild.innerHTML = "<td><button onClick='editRow(this)'>Edit</button></td>";
-          row.lastElementChild.previousElementSibling.innerHTML = "<td><button onClick='deleteRow(this)'>Delete</button></td>";
-        } else {
-          checkboxCount--;
-          // console.log("Not Checked");
-          row.style.backgroundColor = "white";
-          row.lastElementChild.innerHTML = "";
-          row.lastElementChild.previousElementSibling.innerHTML = "";
-        }
-      })
+function hideOnStart(){
+  var count=0;
+  let submitBtn = document.getElementById("button");
+  for(var i = 0; i < checkRows.length; i++){
+    var row = checkRows[i].parentNode.parentNode;
+    
+    if(!checkRows[i].checked){
+      count++;
+      row.querySelectorAll("td")[8].classList.add("columnHide");
+      row.querySelectorAll("td")[9].classList.add("columnHide");
+    }
+
+    if(checkRows.length === count){
+
+    submitBtn.style.backgroundColor = "gray";
+    submitBtn.style.border = "";
+    submitBtn.style.cursor = "initial";
+    submitBtn.disabled = true;
+      document.querySelectorAll("tr")[0].querySelectorAll("th")[8].classList.add("columnHide");
+      document.querySelectorAll("tr")[0].querySelectorAll("th")[9].classList.add("columnHide");
+    }
   }
 }
+
 
 selectRow();
 
+let boolean = true; 
 
-// Function to get selected row and img click
+let mainRetoric = true;  //boolean values
 
-let booleanMain = true; 
-
-function toggleImg1(r) {
+function rowOne(r) {
     const i = r.parentNode.parentNode.rowIndex;
     const row = r.parentNode.parentNode;
-    // console.log(row);
     const descRow = row.nextSibling; 
-    // console.log(descRow);
-    // console.log(row); 
-    if (booleanMain) {
-      descRow.style.display = "table-row";
-      booleanMain = false;
-      // console.log("Checked");
+    if (mainRetoric) {
+      descRow.style.display = "table-cell";
+      mainRetoric = false;
     } else {          
       descRow.style.display = "none";
-      // console.log("UnChecked");
-      booleanMain = true;
+      mainRetoric = true;
     }
 }
 
-// toggleImg();
 
-let boolean = true; 
-
-function toggleImg2(r) {  
+function rowTwo(r) {  
   const row = r.parentNode.parentNode;
-  // console.log(row);
   const descRow = row.nextSibling.nextSibling; 
-  // console.log(descRow);
-  // console.log(row); 
   if (boolean) {
-    descRow.style.display = "table-row";
+    descRow.style.display = "table-cell";
     boolean = false;
-    // console.log("Checked");
   } else {          
     descRow.style.display = "none";
-    // console.log("UnChecked");
     boolean = true;
   }
 }
-
-// Function to get selected row and get delete button
 
 function deleteRow(r) {
   const i = r.parentNode.parentNode.rowIndex;
   document.getElementById("myTable").deleteRow(i);
   document.getElementById("myTable").deleteRow(i);
-  alert(`Student deleted successfully!`);
+  alert(`Row Deleted!`);
+  hideOnStart();
   selectRow();
 }
-
-
-// Function to get selected row and get edit button
 
 function editRow(r) {
-  alert("Edit the details!");
+  alert("Go ahead! edit the details");
   selectRow();
 }
 
-// Add new student to the table
-
-function addNewRow() {
+function addRow() {
   const row = table.insertRow(table.rows.length);
 
   const rowCount = table.rows.length;
-
-  // console.log(rowCount);
-
   const checkboxNew = row.insertCell(0);
   const student = row.insertCell(1);
   const advisor = row.insertCell(2);
@@ -134,28 +113,47 @@ function addNewRow() {
   const deleteBtn = row.insertCell(8);
   const editBtn = row.insertCell(9);
 
-  checkboxNew.innerHTML = `<td><input type="checkbox" /><br /><br /><img onClick="toggleImg1(this)" src="down.png" width="25px" /></td>`;
+  checkboxNew.innerHTML = `<td><input type="checkbox" /><br /><br /><img onClick="rowOne(this)" src="down.png" width="25px" /></td>`;
 
   student.innerHTML = `Student ${Math.ceil(rowCount/ 2)}`;
   advisor.innerHTML = `Teacher ${Math.ceil(rowCount/ 2)}`;
   awardStatus.innerHTML = "Approved";
   semester.innerHTML = "Fall";
-  type.innerHTML = "TA";
+  type.innerHTML = " TA ";
   budget.innerHTML = Math.ceil(Math.random() * 100000);
   percentage.innerHTML = "100%";
 
   try {
-    setTimeout(() => {alert(`Record Added Successfully - Student ${Math.ceil(rowCount/ 2)}`)}, 100);
+    setTimeout(() => {alert(`Next Student Added ${Math.ceil(rowCount/ 2)}`)}, 100);
   } catch (error) {
     alert("Something went wrong!");
   }
   
   selectRow();
 
-  addSubsequentRow();
+  nextRowAddition();
+  hideOnStart();
 }
 
-function addSubsequentRow() {
+window.addEventListener("click", () => {
+
+  let submitBtn = document.getElementById("button");
+
+  if (countBoxPresent > 0) {    
+    submitBtn.style.backgroundColor = "orange";
+    submitBtn.style.border = "2px solid orange";
+    submitBtn.style.cursor = "pointer";
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.style.backgroundColor = "gray";
+    submitBtn.style.border = "";
+    submitBtn.style.cursor = "initial";
+    submitBtn.disabled = true;
+  }
+}
+)
+
+function nextRowAddition() {
   const row = table.insertRow(table.rows.length);
 
   row.classList.add("dropDownTextArea")
@@ -174,22 +172,34 @@ function addSubsequentRow() {
   selectRow();
 }
 
+var rowname;
+// selectRow();
 
-// Get active on click events of window model
-
-window.addEventListener("click", () => {
-
-  let submitBtn = document.getElementById("button");
-
-  if (checkboxCount > 0) {    
-    submitBtn.style.backgroundColor = "orange";
-    submitBtn.style.border = "2px solid orange";
-    submitBtn.style.cursor = "pointer";
-    submitBtn.disabled = false;
-  } else {
-    submitBtn.style.backgroundColor = "gray";
-    submitBtn.style.border = "";
-    submitBtn.style.cursor = "initial";
-    submitBtn.disabled = true;
+function selectRow() {
+  for (let i=0; i<checkRows.length; i++) {
+      const row = checkRows[i].parentNode.parentNode;
+      rowname=checkRows;
+      
+      checkRows[i].addEventListener("click", () => {
+        if (checkRows[i].checked) {
+          countBoxPresent++;
+          row.style.backgroundColor = "yellow";
+          row.lastElementChild.innerHTML = "<td><button onClick='editRow(this)'>Edit Row</button></td>";
+          row.lastElementChild.previousElementSibling.innerHTML = "<td><button onClick='deleteRow(this)'>Delete Row</button></td>";
+          document.querySelectorAll("tr")[0].querySelectorAll("th")[8].classList.remove("columnHide");
+          document.querySelectorAll("tr")[0].querySelectorAll("th")[9].classList.remove("columnHide");
+          row.querySelectorAll("td")[8].classList.remove("columnHide");
+          row.querySelectorAll("td")[9].classList.remove("columnHide");
+        } else {
+          countBoxPresent--;
+          row.style.backgroundColor = "white";
+          row.lastElementChild.innerHTML = "";
+          row.lastElementChild.previousElementSibling.innerHTML = "";
+          document.querySelectorAll("tr")[0].querySelectorAll("th")[8].classList.add("columnHide");
+          document.querySelectorAll("tr")[0].querySelectorAll("th")[9].classList.add("columnHide");
+          row.querySelectorAll("td")[8].classList.add("columnHide");
+          row.querySelectorAll("td")[9].classList.add("columnHide");
+        }
+      })
   }
-})
+}

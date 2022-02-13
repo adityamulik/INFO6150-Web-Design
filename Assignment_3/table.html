@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 
-<!-- Also read chapter 9 from slides - Regular Expressions -->
-
 <html>
 <head>
 	<title>Table CheckList</title>
@@ -24,7 +22,7 @@
 			<th>EDIT</th>
 		</tr>
 		<tr>
-			<td><input type="checkbox" /><br /><br /><img onClick="toggleImg2(this)" src="down.png" width="25px" /></td>
+			<td><input type="checkbox" /><br /><br /><img onClick="rowTwo(this)" src="down.png" width="25px" /></td>
 			<td>Student 1</td>
 			<td>Teacher 1</td>
 			<td>Approved</td>
@@ -35,7 +33,7 @@
 			<td></td>
 			<td></td>
 		</tr>
-		<tr class="dropDownTextArea"><td colspan="10">
+		<tr class="dropDownTextArea"><td colspan="8">
 			Advisor:<br /><br />
 			Award Details<br />
 			Summer 1-2014(TA)<br />
@@ -45,7 +43,7 @@
 			Award Status:<br /><br /><br />
 		</td></tr>
 		<tr>
-			<td><input type="checkbox" /><br /><br /><img onClick="toggleImg2(this)" src="down.png" width="25px" /></td>
+			<td><input type="checkbox" /><br /><br /><img onClick="rowTwo(this)" src="down.png" width="25px" /></td>
 			<td>Student 2</td>
 			<td>Teacher 2</td>
 			<td>Approved</td>
@@ -56,7 +54,7 @@
 			<td></td>
 			<td></td>
 		</tr>
-		<tr class="dropDownTextArea"><td colspan="10">
+		<tr class="dropDownTextArea"><td colspan="8">
 			Advisor:<br /><br />
 			Award Details<br />
 			Summer 1-2014(TA)<br />
@@ -66,7 +64,7 @@
 			Award Status:<br /><br /><br />
 		</td></tr>
 		<tr>
-			<td><input type="checkbox" /><br /><br /><img onClick="toggleImg2(this)" src="down.png" width="25px" /></td>
+			<td><input type="checkbox" /><br /><br /><img onClick="rowTwo(this)" src="down.png" width="25px" /></td>
 			<td>Student 3</td>
 			<td>Teacher 3</td>
 			<td>Approved</td>
@@ -93,10 +91,10 @@
 	<br /><br />
 	
 	<button id="button" disabled>SUBMIT SELECTED AWARDS</button>
-	<button id="add" onClick="addNewRow()">Add New Student</button>
+	<button id="add" onClick="addRow()">Add New Student</button>
 
 	<nav class="socialmediaicons"></nav>
 	<script src="script.js"></script>
 	
-</body>
+</body> 
 </html>
