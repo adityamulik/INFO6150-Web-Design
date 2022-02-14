@@ -20,12 +20,32 @@ const textReason = document.getElementById("textReason");
 const submitBtn = document.getElementById("submitBtn");
 const resetBtn = document.getElementById("resetBtn");
 
+let table = document.getElementById("tableData");
+
 // End Block
 
 // Form Submission Block
 
 form.addEventListener("submit", e => {
   e.preventDefault();
+
+  tableData.innerHTML += `
+    <tr>
+      <td>Mr. ${firstName.value} ${lastName.value}</td>
+      <td>${emailId.value}</td>
+      <td>${phoneNumber.value}</td>
+      <td>${streetAddress1.value}</td>
+      <td>${streetAddress2.value}</td>
+      <td>${city.value}</td>
+      <td>${state.value}</td>
+      <td>${zipcode.value}</td>
+      <td>${comments.value}</td>
+      <td>${ratingSelect.value}</td>
+      <td></td>
+    </tr>
+  `;
+
+
   alert("Details have been uploaded to the table!")
 })
 
@@ -108,10 +128,9 @@ const validateEmail = email => {
 
 ratingSelect.onchange = (e) => {
   
-  if (e.target.value == "high") {
+  if (e.target.value == "5") {
 
     dynamicCheckbox.style.display = "block";
-    textReason.style.display = "block";
 
     dynamicCheckbox.innerHTML = `
       <p>Thanks for the 5 rating, what did you like the most?</p>
@@ -120,26 +139,48 @@ ratingSelect.onchange = (e) => {
       <input type='checkbox' name="source" value="travel" /> Travel 
     `;
 
-  } else if (e.target.value == "medium") {
+  } else if (e.target.value == "4") {
     
     dynamicCheckbox.style.display = "block";
 
     dynamicCheckbox.innerHTML = `
-      <p>Thanks for the 4 rating, what did you like the most?</p>
+      <p>Thanks for the 4 rating, please share more details to make the product more viable!</p>
       <input type='checkbox' name="source" value="facebook" /> Facebook
       <input type='checkbox' name="source" value="google" /> Google
       <input type='checkbox' name="source" value="yelp" /> Yelp 
     `;
 
-  } else if (e.target.value == "low") {
+  } else if (e.target.value == "3") {
     
     dynamicCheckbox.style.display = "block";
 
     dynamicCheckbox.innerHTML = `
-      <p>Thanks for the 3 rating, what did you like the most?</p>
+      <p>Thanks for the 3 rating, what did you like or dislike the most?</p>
       <input type='checkbox' name="source" value="facebook" /> Facebook
       <input type='checkbox' name="source" value="google" /> Google
       <input type='checkbox' name="source" value="yelp" /> Yelp 
+    `;
+
+  } else if (e.target.value == "2") {
+    
+    dynamicCheckbox.style.display = "block";
+
+    dynamicCheckbox.innerHTML = `
+      <p>Please provide us more feedback to serve you better!</p>
+      <input type='checkbox' name="source" value="facebook" /> Facebook
+      <input type='checkbox' name="source" value="google" /> Google
+      <input type='checkbox' name="source" value="yelp" /> Yelp 
+    `;
+
+  } else if (e.target.value == "1") {
+    
+    dynamicCheckbox.style.display = "block";
+
+    dynamicCheckbox.innerHTML = `
+      <p>We're sorry about it, what went wrong?</p>
+      <input type='checkbox' name="source" value="facebook" /> Service
+      <input type='checkbox' name="source" value="google" /> Quality
+      <input type='checkbox' name="source" value="yelp" /> Quantity 
     `;
 
   } else {
