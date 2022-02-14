@@ -13,6 +13,28 @@
       main{
           padding: 50px;
       }
+
+			.dynamicCheckbox {
+				display: none;
+			}
+
+			.textReason {
+				display: none;
+			}
+			table {
+				width: 1300px;
+				margin: auto;
+				text-align: left;				
+			}
+
+			table, th { 
+				border: 1px solid;
+			}
+
+			.table-header {
+				text-align: center;
+				font-size: 24px;
+			}
   </style>
  </head>
  <body>
@@ -68,20 +90,84 @@
 			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" />
 			<br><br>
              
-            <label for="zipcode">How did you hear*:</label>
+			<label for="zipcode">How did you hear*:</label>
 			<input type='checkbox' name="source" value="facebook" /> Facebook
-            <input type='checkbox' name="source" value="google" /> Google
-            <input type='checkbox' name="source" value="yelp" /> Yelp 
+			<input type='checkbox' name="source" value="google" /> Google
+			<input type='checkbox' name="source" value="yelp" /> Yelp 
 			<br><br> 
              
 			<label for="comments">Comments*:</label>
 			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
 			<br><br>
+
+			<label for="rating">Rating*:</label>
+			<select name="rating" id="rating">
+				<option value="select">Select Rating</option>
+				<option value="high">High</option>
+				<option value="medium">Medium</option>
+				<option value="low">Low</option>
+			</select>
+			<br><br>
+
+			<!-- Checkbox block -->
+			<div id="dynamicCheckbox" class="dynamicCheckbox">
+				<br><br>
+			</div>
+			
+			<!-- End Block -->
+
+			<!-- Text Field block -->
+			<div class="textReason">
+				<label for="ratingComment">More Feedback: </label>
+				<textarea name="ratingComment" id="" cols="30" rows="10">
+
+				</textarea>
+				<br><br>
+			</div>			
+			<!-- End Block -->
+
 			<input type="Submit">
 			<input type="Reset">
 			<br><br>
 		 </form>
-	 </main>
+	 </main>	 
+ </div>
+
+ <br><br><br><br>
+ 
+ <div class="table-container">
+	<h2 class="table-header">Feedback Data:</h2><br><br>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Email ID</th>
+			<th>Phone Number</th>
+			<th>Street Address 1</th>
+			<th>Street Address 2</th>
+			<th>City</th>
+			<th>State</th>
+			<th>Zip Code</th>
+			<th>Comments</th>
+			<th>Rating Selected</th>
+			<th>Rating Comment</th>
+		</tr>
+		<tr>
+			<td>Alfreds Futterkiste</td>
+			<td>Maria Anders</td>
+			<td>Germany</td>
+			<td>Germany</td>
+			<td>Germany</td>
+			<td>Germany</td>
+			<td>Germany</td>
+			<td>Germany</td>
+			<td>Germany</td>
+		</tr>
+		<tr>
+			<td>Centro comercial Moctezuma</td>
+			<td>Francisco Chang</td>
+			<td>Mexico</td>
+		</tr>
+	</table>
  </div>
 
  <script src="./script.js" />

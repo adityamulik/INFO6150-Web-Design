@@ -13,6 +13,9 @@ const city = document.getElementById("city");
 const state = document.getElementById("state");
 const zipcode = document.getElementById("zipcode");
 const comments = document.getElementById("comments");
+const ratingSelect = document.getElementById("rating");
+const dynamicCheckbox = document.getElementById("dynamicCheckbox");
+const textReason = document.getElementById("textReason");
 
 const submitBtn = document.getElementById("submitBtn");
 const resetBtn = document.getElementById("resetBtn");
@@ -23,16 +26,21 @@ const resetBtn = document.getElementById("resetBtn");
 
 form.addEventListener("submit", e => {
   e.preventDefault();
-  console.log(validatePhoneNo(phoneNumber.value));
   alert("Details have been uploaded to the table!")
 })
 
 // End Block
 
+// Form Reset Block
+
+
+
+// End Block
+
 // Validation Block 
 
+// Regex Validations
 phoneNumber.addEventListener("keyup", () => {
-  console.log(validatePhoneNo(phoneNumber.value));
   if(validatePhoneNo(phoneNumber.value)) {
     phoneNumber.style.color = "green";
   } else {
@@ -58,7 +66,6 @@ emailId.addEventListener("keyup", () => {
     emailId.style.color = "red";
   };
 })
-
 
 // Helper function to validate Phone No.
 const validatePhoneNo = no => {
@@ -89,6 +96,56 @@ const validateEmail = email => {
   } else {
     return false;
   }
+}
+
+// Full Form Validations
+
+
+
+// End Block
+
+// Dynamic Select Block Selection 
+
+ratingSelect.onchange = (e) => {
+  
+  if (e.target.value == "high") {
+
+    dynamicCheckbox.style.display = "block";
+    textReason.style.display = "block";
+
+    dynamicCheckbox.innerHTML = `
+      <p>Thanks for the 5 rating, what did you like the most?</p>
+      <input type='checkbox' name="source" value="service" /> Service
+      <input type='checkbox' name="source" value="food" /> Food
+      <input type='checkbox' name="source" value="travel" /> Travel 
+    `;
+
+  } else if (e.target.value == "medium") {
+    
+    dynamicCheckbox.style.display = "block";
+
+    dynamicCheckbox.innerHTML = `
+      <p>Thanks for the 4 rating, what did you like the most?</p>
+      <input type='checkbox' name="source" value="facebook" /> Facebook
+      <input type='checkbox' name="source" value="google" /> Google
+      <input type='checkbox' name="source" value="yelp" /> Yelp 
+    `;
+
+  } else if (e.target.value == "low") {
+    
+    dynamicCheckbox.style.display = "block";
+
+    dynamicCheckbox.innerHTML = `
+      <p>Thanks for the 3 rating, what did you like the most?</p>
+      <input type='checkbox' name="source" value="facebook" /> Facebook
+      <input type='checkbox' name="source" value="google" /> Google
+      <input type='checkbox' name="source" value="yelp" /> Yelp 
+    `;
+
+  } else {
+    dynamicCheckbox.style.display = "none";
+  }
+
 }
 
 // End Block
