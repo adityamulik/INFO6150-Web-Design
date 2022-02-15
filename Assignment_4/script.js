@@ -3,6 +3,7 @@
 
 const form = document.querySelector("form");
 
+const titles = document.querySelector('input[name="title"]');
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const emailId = document.getElementById("emailId");
@@ -23,6 +24,9 @@ const resetBtn = document.getElementById("resetBtn");
 
 let table = document.getElementById("tableData");
 
+let validatationBool = false;
+let validationErrors = {};
+
 // End Block
 
 // Form Submission Block
@@ -32,6 +36,8 @@ form.addEventListener("submit", e => {
 
   if (
     // Validate Rating selected
+    firstName.value != "" &&
+    lastName.value != "" &&
     ratingSelect.value != "select"
   ) {
     tableData.innerHTML += `
@@ -50,7 +56,8 @@ form.addEventListener("submit", e => {
       </tr>
     `;
 
-    alert("Details have been uploaded to the table!")
+    alert("Details have been uploaded to the table!");
+    form.reset();
   } else {
     alert("Please enter details correctly!");
   }
@@ -139,12 +146,14 @@ ratingSelect.onchange = (e) => {
   if (e.target.value == "5") {
 
     dynamicCheckbox.style.display = "block";
+    textReason.style.display = "none";
 
     dynamicCheckbox.innerHTML = `
       <p>Thanks for the 5 rating, what did you like the most?</p>
       <input id="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
       <input id="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
-      <input id="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
+      <input id="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel
+      <br><br>
     `;
 
     const messageCheckbox1 = document.getElementById("messageCheckbox1");
@@ -180,13 +189,45 @@ ratingSelect.onchange = (e) => {
   } else if (e.target.value == "4") {
     
     dynamicCheckbox.style.display = "block";
+    textReason.style.display = "none";
 
     dynamicCheckbox.innerHTML = `
       <p>Thanks for the 4 rating, please share more details to make the product more viable!</p>
-      <input class="messageCheckbox" type='checkbox' name="source" value="facebook" /> Facebook
-      <input class="messageCheckbox" type='checkbox' name="source" value="google" /> Google
-      <input class="messageCheckbox" type='checkbox' name="source" value="yelp" /> Yelp 
+      <input id="messageCheckbox1" class="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+      <input id="messageCheckbox2" class="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+      <input id="messageCheckbox3" class="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
+      <br><br>
     `;
+
+    const messageCheckbox1 = document.getElementById("messageCheckbox1");
+    const messageCheckbox2 = document.getElementById("messageCheckbox2");
+    const messageCheckbox3 = document.getElementById("messageCheckbox3");
+    
+
+    messageCheckbox1.addEventListener("click", () => {
+    
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox2.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox3.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
 
   } else if (e.target.value == "3") {
     
@@ -194,35 +235,131 @@ ratingSelect.onchange = (e) => {
 
     dynamicCheckbox.innerHTML = `
       <p>Thanks for the 3 rating, what did you like or dislike the most?</p>
-      <input class="messageCheckbox" type='checkbox' name="source" value="facebook" /> Facebook
-      <input class="messageCheckbox" type='checkbox' name="source" value="google" /> Google
-      <input class="messageCheckbox" type='checkbox' name="source" value="yelp" /> Yelp 
+      <input id="messageCheckbox1" class="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+      <input id="messageCheckbox2" class="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+      <input id="messageCheckbox3" class="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
+      <br><br>
     `;
+
+    const messageCheckbox1 = document.getElementById("messageCheckbox1");
+    const messageCheckbox2 = document.getElementById("messageCheckbox2");
+    const messageCheckbox3 = document.getElementById("messageCheckbox3");
+    
+
+    messageCheckbox1.addEventListener("click", () => {
+    
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox2.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox3.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
 
   } else if (e.target.value == "2") {
     
     dynamicCheckbox.style.display = "block";
+    textReason.style.display = "none";
 
     dynamicCheckbox.innerHTML = `
       <p>Please provide us more feedback to serve you better!</p>
-      <input class="messageCheckbox" type='checkbox' name="source" value="facebook" /> Facebook
-      <input class="messageCheckbox" type='checkbox' name="source" value="google" /> Google
-      <input class="messageCheckbox" type='checkbox' name="source" value="yelp" /> Yelp 
+      <input id="messageCheckbox1" class="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+      <input id="messageCheckbox2" class="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+      <input id="messageCheckbox3" class="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
+      <br><br>
     `;
+
+    const messageCheckbox1 = document.getElementById("messageCheckbox1");
+    const messageCheckbox2 = document.getElementById("messageCheckbox2");
+    const messageCheckbox3 = document.getElementById("messageCheckbox3");
+    
+
+    messageCheckbox1.addEventListener("click", () => {
+    
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox2.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox3.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
 
   } else if (e.target.value == "1") {
     
     dynamicCheckbox.style.display = "block";
+    textReason.style.display = "none";
 
     dynamicCheckbox.innerHTML = `
       <p>We're sorry about it, what went wrong?</p>
-      <input class="messageCheckbox" type='checkbox' name="source" value="facebook" /> Service
-      <input class="messageCheckbox" type='checkbox' name="source" value="google" /> Quality
-      <input class="messageCheckbox" type='checkbox' name="source" value="yelp" /> Quantity 
+      <input id="messageCheckbox1" class="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+      <input id="messageCheckbox2" class="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+      <input id="messageCheckbox3" class="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
+      <br><br>
     `;
+
+    const messageCheckbox1 = document.getElementById("messageCheckbox1");
+    const messageCheckbox2 = document.getElementById("messageCheckbox2");
+    const messageCheckbox3 = document.getElementById("messageCheckbox3");
+    
+
+    messageCheckbox1.addEventListener("click", () => {
+    
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox2.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox3.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
 
   } else {
     dynamicCheckbox.style.display = "none";
+    textReason.style.display = "none";
 
     dynamicCheckbox.innerHTML = "";
   }
@@ -230,9 +367,3 @@ ratingSelect.onchange = (e) => {
 }
 
 // End Block
-
-// Checkbox Selected and display text box
-
-const checkboxCheckedValidator = () => {
-    
-}
