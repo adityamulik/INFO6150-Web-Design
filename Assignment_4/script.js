@@ -16,6 +16,7 @@ const comments = document.getElementById("comments");
 const ratingSelect = document.getElementById("rating");
 const dynamicCheckbox = document.getElementById("dynamicCheckbox");
 const textReason = document.getElementById("textReason");
+const ratingComment = document.getElementById("ratingComment");
 
 const submitBtn = document.getElementById("submitBtn");
 const resetBtn = document.getElementById("resetBtn");
@@ -29,24 +30,30 @@ let table = document.getElementById("tableData");
 form.addEventListener("submit", e => {
   e.preventDefault();
 
-  tableData.innerHTML += `
-    <tr>
-      <td>Mr. ${firstName.value} ${lastName.value}</td>
-      <td>${emailId.value}</td>
-      <td>${phoneNumber.value}</td>
-      <td>${streetAddress1.value}</td>
-      <td>${streetAddress2.value}</td>
-      <td>${city.value}</td>
-      <td>${state.value}</td>
-      <td>${zipcode.value}</td>
-      <td>${comments.value}</td>
-      <td>${ratingSelect.value}</td>
-      <td></td>
-    </tr>
-  `;
+  if (
+    // Validate Rating selected
+    ratingSelect.value != "select"
+  ) {
+    tableData.innerHTML += `
+      <tr>
+        <td>Mr. ${firstName.value} ${lastName.value}</td>
+        <td>${emailId.value}</td>
+        <td>${phoneNumber.value}</td>
+        <td>${streetAddress1.value}</td>
+        <td>${streetAddress2.value}</td>
+        <td>${city.value}</td>
+        <td>${state.value}</td>
+        <td>${zipcode.value}</td>
+        <td>${comments.value}</td>
+        <td>${ratingSelect.value}</td>
+        <td>${ratingComment.value}</td>
+      </tr>
+    `;
 
-
-  alert("Details have been uploaded to the table!")
+    alert("Details have been uploaded to the table!")
+  } else {
+    alert("Please enter details correctly!");
+  }
 })
 
 // End Block
@@ -61,6 +68,7 @@ form.addEventListener("submit", e => {
 
 // Regex Validations
 phoneNumber.addEventListener("keyup", () => {
+  console.log(phoneNumber.value);
   if(validatePhoneNo(phoneNumber.value)) {
     phoneNumber.style.color = "green";
   } else {
@@ -134,10 +142,40 @@ ratingSelect.onchange = (e) => {
 
     dynamicCheckbox.innerHTML = `
       <p>Thanks for the 5 rating, what did you like the most?</p>
-      <input type='checkbox' name="source" value="service" /> Service
-      <input type='checkbox' name="source" value="food" /> Food
-      <input type='checkbox' name="source" value="travel" /> Travel 
+      <input id="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+      <input id="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+      <input id="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
     `;
+
+    const messageCheckbox1 = document.getElementById("messageCheckbox1");
+    const messageCheckbox2 = document.getElementById("messageCheckbox2");
+    const messageCheckbox3 = document.getElementById("messageCheckbox3");
+    
+
+    messageCheckbox1.addEventListener("click", () => {
+    
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox2.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
+
+    messageCheckbox3.addEventListener("click", () => {
+      if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+        textReason.style.display = "block";
+      } else {
+        textReason.style.display = "none";
+      }
+    })
 
   } else if (e.target.value == "4") {
     
@@ -145,9 +183,9 @@ ratingSelect.onchange = (e) => {
 
     dynamicCheckbox.innerHTML = `
       <p>Thanks for the 4 rating, please share more details to make the product more viable!</p>
-      <input type='checkbox' name="source" value="facebook" /> Facebook
-      <input type='checkbox' name="source" value="google" /> Google
-      <input type='checkbox' name="source" value="yelp" /> Yelp 
+      <input class="messageCheckbox" type='checkbox' name="source" value="facebook" /> Facebook
+      <input class="messageCheckbox" type='checkbox' name="source" value="google" /> Google
+      <input class="messageCheckbox" type='checkbox' name="source" value="yelp" /> Yelp 
     `;
 
   } else if (e.target.value == "3") {
@@ -156,9 +194,9 @@ ratingSelect.onchange = (e) => {
 
     dynamicCheckbox.innerHTML = `
       <p>Thanks for the 3 rating, what did you like or dislike the most?</p>
-      <input type='checkbox' name="source" value="facebook" /> Facebook
-      <input type='checkbox' name="source" value="google" /> Google
-      <input type='checkbox' name="source" value="yelp" /> Yelp 
+      <input class="messageCheckbox" type='checkbox' name="source" value="facebook" /> Facebook
+      <input class="messageCheckbox" type='checkbox' name="source" value="google" /> Google
+      <input class="messageCheckbox" type='checkbox' name="source" value="yelp" /> Yelp 
     `;
 
   } else if (e.target.value == "2") {
@@ -167,9 +205,9 @@ ratingSelect.onchange = (e) => {
 
     dynamicCheckbox.innerHTML = `
       <p>Please provide us more feedback to serve you better!</p>
-      <input type='checkbox' name="source" value="facebook" /> Facebook
-      <input type='checkbox' name="source" value="google" /> Google
-      <input type='checkbox' name="source" value="yelp" /> Yelp 
+      <input class="messageCheckbox" type='checkbox' name="source" value="facebook" /> Facebook
+      <input class="messageCheckbox" type='checkbox' name="source" value="google" /> Google
+      <input class="messageCheckbox" type='checkbox' name="source" value="yelp" /> Yelp 
     `;
 
   } else if (e.target.value == "1") {
@@ -178,15 +216,23 @@ ratingSelect.onchange = (e) => {
 
     dynamicCheckbox.innerHTML = `
       <p>We're sorry about it, what went wrong?</p>
-      <input type='checkbox' name="source" value="facebook" /> Service
-      <input type='checkbox' name="source" value="google" /> Quality
-      <input type='checkbox' name="source" value="yelp" /> Quantity 
+      <input class="messageCheckbox" type='checkbox' name="source" value="facebook" /> Service
+      <input class="messageCheckbox" type='checkbox' name="source" value="google" /> Quality
+      <input class="messageCheckbox" type='checkbox' name="source" value="yelp" /> Quantity 
     `;
 
   } else {
     dynamicCheckbox.style.display = "none";
+
+    dynamicCheckbox.innerHTML = "";
   }
 
 }
 
 // End Block
+
+// Checkbox Selected and display text box
+
+const checkboxCheckedValidator = () => {
+    
+}
