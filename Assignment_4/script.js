@@ -3,7 +3,7 @@
 
 const form = document.querySelector("form");
 
-const titles = document.querySelector('input[name="title"]');
+const titles = document.querySelectorAll('input[name="title"]');
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const emailId = document.getElementById("emailId");
@@ -34,15 +34,35 @@ let validationErrors = {};
 form.addEventListener("submit", e => {
   e.preventDefault();
 
+  let title;
+
+  for (let i=0; i<titles.length; i++) {
+    // console.log(titles[i].checked);
+    if (titles[i].checked) {
+      validatationBool = true;
+      title = titles[i].value;
+    }
+  }
+
+  // console.log(validateEmail(emailId.value), " ", emailId.value);
+
   if (
     // Validate Rating selected
+    validatationBool &&
     firstName.value != "" &&
     lastName.value != "" &&
-    ratingSelect.value != "select"
+    emailId.value != "" && validateEmail(emailId.value) &&
+    phoneNumber.value != "" && validatePhoneNo(phoneNumber.value) &&
+    streetAddress1.value != "" &&
+    city.value != "" &&
+    state.value != "" &&
+    zipcode.value != "" && validateZipCode(zipcode.value) &&
+    ratingSelect.value != "select" &&
+    ratingComment.value != ""
   ) {
     tableData.innerHTML += `
       <tr>
-        <td>Mr. ${firstName.value} ${lastName.value}</td>
+        <td>${title.charAt(0).toUpperCase() + title.slice(1)}. ${firstName.value} ${lastName.value}</td>
         <td>${emailId.value}</td>
         <td>${phoneNumber.value}</td>
         <td>${streetAddress1.value}</td>
@@ -58,6 +78,7 @@ form.addEventListener("submit", e => {
 
     alert("Details have been uploaded to the table!");
     form.reset();
+    validatationBool = false;
   } else {
     alert("Please enter details correctly!");
   }
@@ -75,7 +96,7 @@ form.addEventListener("submit", e => {
 
 // Regex Validations
 phoneNumber.addEventListener("keyup", () => {
-  console.log(phoneNumber.value);
+  // console.log(phoneNumber.value);
   if(validatePhoneNo(phoneNumber.value)) {
     phoneNumber.style.color = "green";
   } else {
@@ -165,6 +186,11 @@ ratingSelect.onchange = (e) => {
     
       if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
         textReason.style.display = "block";
+        // console.log(ratingComment.value.length);
+        if (ratingComment.value.length == 0) {  
+          // console.log("null");
+          validatationBool = false;
+        }
       } else {
         textReason.style.display = "none";
       }
@@ -173,6 +199,11 @@ ratingSelect.onchange = (e) => {
     messageCheckbox2.addEventListener("click", () => {
       if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
         textReason.style.display = "block";
+        if (ratingComment.value == "") {
+          // console.log("null");
+          validatationBool = false;
+          console.log(validatationBool);
+        }
       } else {
         textReason.style.display = "none";
       }
@@ -181,6 +212,9 @@ ratingSelect.onchange = (e) => {
     messageCheckbox3.addEventListener("click", () => {
       if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
         textReason.style.display = "block";
+        if (ratingComment.value == "") {
+          validatationBool = false;
+        }
       } else {
         textReason.style.display = "none";
       }
@@ -208,6 +242,9 @@ ratingSelect.onchange = (e) => {
     
       if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
         textReason.style.display = "block";
+        if (ratingComment.value == "") {
+          validatationBool = false;
+        }
       } else {
         textReason.style.display = "none";
       }
@@ -216,6 +253,9 @@ ratingSelect.onchange = (e) => {
     messageCheckbox2.addEventListener("click", () => {
       if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
         textReason.style.display = "block";
+        if (ratingComment.value == "") {
+          validatationBool = false;
+        }
       } else {
         textReason.style.display = "none";
       }
@@ -224,6 +264,9 @@ ratingSelect.onchange = (e) => {
     messageCheckbox3.addEventListener("click", () => {
       if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
         textReason.style.display = "block";
+        if (ratingComment.value == "") {
+          validatationBool = false;
+        }
       } else {
         textReason.style.display = "none";
       }
@@ -250,6 +293,9 @@ ratingSelect.onchange = (e) => {
     
       if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
         textReason.style.display = "block";
+        if (ratingComment.value == "") {
+          validatationBool = false;
+        }
       } else {
         textReason.style.display = "none";
       }
@@ -293,6 +339,9 @@ ratingSelect.onchange = (e) => {
     
       if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
         textReason.style.display = "block";
+        if (ratingComment.value == "") {
+          validatationBool = false;
+        }
       } else {
         textReason.style.display = "none";
       }
@@ -336,6 +385,9 @@ ratingSelect.onchange = (e) => {
     
       if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
         textReason.style.display = "block";
+        if (ratingComment.value == "") {
+          validatationBool = false;
+        }
       } else {
         textReason.style.display = "none";
       }
