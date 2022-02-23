@@ -16,7 +16,20 @@ Project Members:
 - Tushar Kurhekar
 - Aditya Mulik
 
-Features:
+## 10 Bootstrap Components: 
+
+Ref: https://getbootstrap.com/docs/4.1/components
+
+1. Carousel 
+2. Close Button
+3. Dropdown
+4. Tooltip - Hover on footer display's title of the website
+5. Alert - Message sending from contact form
+6. Button - btn bootstrap class used for sending message on contact form
+7. 
+8. 
+9. 
+10. 
 
 
 Setup:
