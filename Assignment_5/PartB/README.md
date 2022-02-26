@@ -12,7 +12,7 @@ Group Project in Bootstrap
 
 The website is a e-commerce website where users from different age group or gender can buy clothing merchandize at a cheaper rate and pay online using e-payment method available from the website.
 
-Project Members:
+## Project Members:
 
 - Ramya Kanguri
 - Sagar Khandagale
