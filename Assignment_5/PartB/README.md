@@ -5,7 +5,8 @@
 - NUID: 002127694
 - Email: mulik.a@northeastern.edu
 
-## Topic: Group Project in Bootstrap
+## Topic: 
+Group Project in Bootstrap
 
 ## Description:
 
