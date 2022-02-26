@@ -26,9 +26,9 @@ Ref: https://getbootstrap.com/docs/4.1/components
 4. Tooltip - Hover on footer display's title of the website
 5. Alert - Message sending from contact form
 6. Button - btn bootstrap class used for sending message on contact form
-7. 
-8. 
-9. 
+7. Progress Bar - Show the Progress History
+8. Cards
+9. Nav
 10. 
 
 
