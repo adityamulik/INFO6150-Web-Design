@@ -28,8 +28,8 @@ Ref: https://getbootstrap.com/docs/4.1/components
 6. Button - btn bootstrap class used for sending message on contact form
 7. Form - To display contact/feedback form.
 8. Alert - To display alerts on top of  certain pages
-9. 
-10. 
+9. Progress Bar - Show the Progress History
+10. Cards
 
 
 Setup:
