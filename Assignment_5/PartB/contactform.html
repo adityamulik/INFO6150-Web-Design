@@ -1,0 +1,225 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="CSS_files/ecommerce.css" />
+    <script src="Js_files/ecommerce.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Plugins/slick-master/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Plugins/slick-master/slick/slick-theme.css"
+    />
+    <script
+      type="text/javascript"
+      src="Plugins/slick-master/slick/slick.min.js"
+    ></script>
+    <style>
+      .hide-slider {
+        display: none;
+      }
+      @media screen and (max-width: 991px) {
+        .hide-slider {
+          display: block;
+        }
+      }
+      body {
+        background-color: white;
+      }
+
+      .contact-clean {
+        background: rgb(255, 255, 255);
+        padding: 80px 0;
+      }
+
+      @media (max-width: 767px) {
+        .contact-clean {
+          padding: 20px 0;
+        }
+      }
+
+      .contact-clean form {
+        max-width: 480px;
+        width: 90%;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 4px;
+        color: #525d68;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 767px) {
+        .contact-clean form {
+          padding: 30px;
+        }
+      }
+
+      .contact-clean h2 {
+        margin-top: 5px;
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 36px;
+        color: inherit;
+      }
+
+      .contact-clean .form-group:last-child {
+        margin-bottom: 5px;
+      }
+
+      .contact-clean form .form-control {
+        background: rgb(207, 194, 194);
+        border-radius: 2px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+        outline: none;
+        color: inherit;
+        padding-left: 12px;
+        height: 42px;
+      }
+
+      .contact-clean form .form-control:focus {
+        border: 1px solid #977c7c;
+      }
+
+      .contact-clean form textarea.form-control {
+        min-height: 100px;
+        max-height: 260px;
+        padding-top: 10px;
+        resize: vertical;
+        resize: none;
+      }
+
+      .contact-clean form .btn {
+        padding: 16px 32px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        outline: none !important;
+      }
+
+      .contact-clean form .btn:hover {
+        opacity: 1;
+      }
+
+      .contact-clean form .btn:active {
+        transform: translateY(1px);
+      }
+
+      .contact-clean form .btn-primary {
+        background-color: #000000;
+        margin-top: 15px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="alert alert-info" role="alert">
+        From May 2022 we are open 24x7!
+    </div>
+    <div class="contact-clean">
+      <form onsubmit="return false;">
+        <h2 class="text-center">Contact us</h2>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="Name"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            placeholder="Email"
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            class="form-control"
+            name="message"
+            placeholder="Message"
+            rows="14"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">send</button>
+        </div>
+      </form>
+    </div>
+    <!--carousel each slider-->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 1000,
+      });
+      /* const parallax1 =document.getElementById('parallax1');
+          const parallax2 =document.getElementById('parallax2');
+          window.addEventListener("scroll",function(){
+            let offset = window.pageYOffset;
+            parallax1.style.backgroundPositionY = offset * 0.4 + 'px';
+            parallax2.style.backgroundPositionY = offset * 0.9 + 'px';
+          });*/
+      $(".history").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        infinite: false,
+        autoplaySpeed: 2000,
+      });
+      /*$(window).width > 991){
+              alert("hello user")
+            }
+            else{ 
+              $(".show").css("display","none")
+            }
+         
+            /*$( window ).resize(function() { 
+              if ($(window).innerWidth() <= 991){
+                $('.history').slick({
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  autoplay: true,
+                  autoplaySpeed: 2000,
+                });
+              }else{
+                $('.history').slick({
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  autoplay: true,
+                  autoplaySpeed: 2000,
+                });
+              }
+            });*/
+    </script>
+  </body>
+</html>
+
+
+
