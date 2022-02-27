@@ -13,6 +13,7 @@ const streetAddress2 = document.getElementById("streetAddress2");
 const city = document.getElementById("city");
 const state = document.getElementById("state");
 const zipcode = document.getElementById("zipcode");
+const source = document.querySelectorAll("#source");
 const comments = document.getElementById("comments");
 const ratingSelect = document.getElementById("rating");
 const dynamicCheckbox = document.getElementById("dynamicCheckbox");
@@ -60,6 +61,15 @@ form.addEventListener("submit", e => {
     ratingSelect.value != "select" &&
     ratingComment.value != ""
   ) {
+
+    let myString = "";
+
+    source.forEach(item => {
+      if (item.checked) {
+        myString += item.value + ", ";
+      }
+    })
+
     tableData.innerHTML += `
       <tr>
         <td>${title.charAt(0).toUpperCase() + title.slice(1)}. ${firstName.value} ${lastName.value}</td>
@@ -70,6 +80,7 @@ form.addEventListener("submit", e => {
         <td>${city.value}</td>
         <td>${state.value}</td>
         <td>${zipcode.value}</td>
+        <td>${myString}</td>
         <td>${comments.value}</td>
         <td>${ratingSelect.value}</td>
         <td>${ratingComment.value}</td>
