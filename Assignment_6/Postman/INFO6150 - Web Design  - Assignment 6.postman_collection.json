@@ -6,6 +6,25 @@
 	},
 	"item": [
 		{
+			"name": "Home Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Create a new user",
 			"request": {
 				"method": "POST",
@@ -49,6 +68,13 @@
 					"path": [
 						"user",
 						"getAll"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -59,8 +85,18 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "12",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": "http://localhost:8000/user/delete",
+					"raw": "http://localhost:8000/user/delete?id=6230f1df5618d1059554dd45",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -69,6 +105,12 @@
 					"path": [
 						"user",
 						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6230f1df5618d1059554dd45"
+						}
 					]
 				}
 			},
