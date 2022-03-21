@@ -26,7 +26,7 @@ Desc: Delete the user by using Delete request.
 4. GET - /user/getAll \
 Desc: Get all the users email addresses and passwords (encrypted) from the database.
 
-# Technology & Softwares:
+## Technology & Softwares:
 
 1. MongoDB
 2. Express
