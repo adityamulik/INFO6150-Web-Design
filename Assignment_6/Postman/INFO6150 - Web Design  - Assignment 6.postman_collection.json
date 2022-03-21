@@ -27,11 +27,14 @@
 		{
 			"name": "Create a new user",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"mulik.a@northeastern.edu\",\n    \"password\": \"abc\",\n    \"confirm_password\": \"abc\"\n}",
+					"raw": "{\n    \"email\": \"kanguri.r@northeastern.edu\",\n    \"password\": \"Ramya@123\",\n    \"confirm_password\": \"Ramya@123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -86,17 +89,16 @@
 				"method": "DELETE",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "id",
-							"value": "12",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"shivani.chavan@northeastern.edu\",\n    \"password\": \"Shivi@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/user/delete?id=6230f1df5618d1059554dd45",
+					"raw": "http://localhost:8000/user/delete",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -109,7 +111,8 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "6230f1df5618d1059554dd45"
+							"value": "6230f1d45618d1059554dd43",
+							"disabled": true
 						}
 					]
 				}
@@ -119,11 +122,14 @@
 		{
 			"name": "Edit a user",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"new_email\": \"a.mulik@northeastern.edu\",\n    \"new_password\": \"abca\",\n    \"confirm_new_password\": \"abca\"\n}",
+					"raw": "{\n    \"email\": \"a.mulik@northeastern.edu\",\n    \"password\": \"Obs\",\n    \"new_password\": \"Obs@123\",\n    \"confirm_new_password\": \"Obs@123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
