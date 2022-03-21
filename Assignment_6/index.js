@@ -162,26 +162,38 @@ app.get("/user/getAll", async (req, res) => {
 // Delete user
 app.delete("/user/delete", async (req, res) => {
 
-  const id = req.query.id;
+  const user = await User.findOne({email: req.body.email});
 
-  User.findByIdAndDelete(id)
-    .then(item => {
-      if (!item) {
-        res.status(404).send({
-          message: `Cannot delete User with id=${id}. User not found!`
+  if (user) {
+    const passCompare = await bcrypt.compare(req.body.password, user.password);
+    if (passCompare) {
+      User.findByIdAndDelete(user._id)
+        .then(item => {
+          if (!item) {
+            res.status(404).send({
+              message: `Cannot delete User with email=${user.email}. User not found!`
+            });
+          } else {
+            res.send({
+              message: `User with email id ${user.email} was deleted successfully!`
+            });
+          }
+        })
+        .catch(err => {
+          res.status(500).send({
+            message: "Could not delete User with email=" + user.email
+          });
         });
-      } else {
-        res.send({
-          message: `User with id ${id} was deleted successfully!`
-        });
-      }
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: "Could not delete User with id=" + id
+    } else {
+      res.status(404).send({
+        message: `Password incorrect entered, please retry.`
       });
+    }
+  } else {
+    res.status(404).send({
+      message: `User was not found! Please check the email address.`
     });
-  
+  }
 });
 
 // Server config block
