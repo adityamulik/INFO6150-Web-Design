@@ -1,9 +1,10 @@
 import React from 'react';
+import NavbarComp from './components/Layout/NavbarComp';
 
 function App() {
   return (
     <div className="App">
-      <p>Assignment 7</p>
+      <NavbarComp />
     </div>
   );
 }
