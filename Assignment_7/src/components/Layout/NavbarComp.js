@@ -1,8 +1,10 @@
-import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+
 import { 
   BrowserRouter as Router,
-  Link,
   Route,
   Routes
 } from 'react-router-dom';
@@ -12,29 +14,29 @@ import AboutUs from '../AboutUs/AboutUs';
 import Jobs from '../Jobs/Jobs';
 import Contact from '../Contact/Contact';
 
-
 const NavbarComp = () => {
+
   return (
     <Router>
-      <div>
-        <Navbar bg="dark" variant={"dark"} expand="lg">
-          <Navbar.Brand>Assignment 7</Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-          <Nav
-              className="mr-auto my-2 my-lg-0"
-              style={{ maxHeight: '100px' }}
-              navbarScroll
-          >
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/about">About Us</Nav.Link>
-              <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-              <Nav.Link as={Link} to="/jobs">Jobs</Nav.Link>
-          </Nav>
+      <div className="nav-container">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Container>
+          <Navbar.Brand href="/">Assignment 7</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+            </Nav>
+            <Nav>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/contact">Contacts</Nav.Link>
+              <Nav.Link href="/jobs">Jobs</Nav.Link>
+            </Nav>
           </Navbar.Collapse>
+          </Container>
         </Navbar>
       </div>
-      <div>
+      <div className='container'>
         <Routes>
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
@@ -42,6 +44,11 @@ const NavbarComp = () => {
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
+      <Navbar className="footer" collapseOnSelect expand="xs" bg="dark" variant="dark">
+        <Container>
+        <Navbar.Brand> &copy; Copyrights | 2022</Navbar.Brand>
+        </Container>
+      </Navbar>
     </Router>
   )
 }
