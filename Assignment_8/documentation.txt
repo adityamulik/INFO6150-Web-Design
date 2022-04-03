@@ -14,4 +14,3 @@ Sign up for a free API key from https://openweathermap.org/ (Links to an externa
 Fetch a real 5-day forecast, and feed that data into your app.
 
 API URL: http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}
-API_KEY=5c00c925c5c9d01f3944cecca80ba9e4
