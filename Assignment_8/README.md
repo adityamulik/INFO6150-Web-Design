@@ -6,7 +6,7 @@
 - Email: mulik.a@northeastern.edu
 
 ## Topic: Assignment 8 ReactJS
-Assignment 7 based on creating frontend application with dynamic card component which is reused in several components. API calls made with data populated using JavaScript's map() function.
+Assignment 8 based on creating frontend application with dynamic card component which is reused in several components. API calls made with data populated using JavaScript's map() function.
 
 ## Technology & Softwares:
 
