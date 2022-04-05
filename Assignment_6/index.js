@@ -84,7 +84,7 @@ app.post("/user/edit", async (req, res) => {
     if (passCompare) {
 
       if (req.body.new_email != undefined && req.body.new_password != undefined && req.body.confirm_new_password != undefined) {
-        res.status(400).send({ message: "Please provide either new email or new password parameters only1" });
+        res.status(400).send({ message: "Please provide either new email or new password parameters only!" });
       } else if (req.body.new_email != undefined && req.body.new_password == undefined && req.body.confirm_new_password == undefined) {
         // console.log("Update new email");
         if (validateEmail(req.body.new_email)) {
