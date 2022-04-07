@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function weather({weatherData}) {
 
-  console.log(weatherData);
+  // console.log(weatherData);
   
   const WeatherIcon = styled.div`
   color: whitesmoke;

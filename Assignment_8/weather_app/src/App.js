@@ -65,10 +65,11 @@ export default function App() {
   
   function getForecast(lat, long) {
     return fetch(
-      `${process.env.REACT_APP_API_URL}/forecast/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`
+      `${process.env.REACT_APP_API_URL}/forecast?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`
     )
       .then(res => handleResponse(res))
       .then(forecastData => {
+        console.log(forecastData);
         if (Object.entries(forecastData).length) {
           return forecastData.list
             .filter(forecast => forecast.dt_txt.match(/09:00:00/))
