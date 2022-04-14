@@ -1,9 +1,59 @@
 .App {
-  background-color: #eeeeee;
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: black;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #1A237E;
+}
+
+a {
+  color: #000 !important;
+}
+a:hover {
+   color: #1A237E !important;
+   text-decoration: none !important;
+}
+
+.cityName{
+  float: left !important;
+}
+
+.container,.card{
+  background-color: #fff !important;
+}
+
+.btn{
+  color: blue;
+
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
