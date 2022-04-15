@@ -8,6 +8,9 @@ import { ProductDepartmentComponent } from "./product-department/product-departm
 import { PriceDisplayComponent } from "./price-display/price-display.component";
 import { ProductRowComponent } from "./product-row/product-row.component";
 import { ProductsListComponent } from "./products-list/products-list.component";
+import { BootstrapComponent } from "./boostrap-modal/bootstrap-modal.component";
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,10 @@ import { ProductsListComponent } from "./products-list/products-list.component";
     ProductDepartmentComponent,
     PriceDisplayComponent,
     ProductRowComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    BootstrapComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent]
 })
