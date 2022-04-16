@@ -32,6 +32,16 @@
   float: left;
 }
 
+.modal-body {
+  text-align: center;
+}
+
+.image {
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
 .product-info {
   padding: 30px;
   float: left;
